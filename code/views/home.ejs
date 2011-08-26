@@ -15,31 +15,13 @@
         <script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
         <script type="text/javascript" src="/javascripts/jquery.gridster.min.js"></script>
         <script type="text/javascript" src="/javascripts/ICanHaz.min.js"></script>
+        <script type="text/javascript" src="/javascripts/dashboard.js"></script>
         
         <script>
-        
-            var widgetsUri = '<%= uri %>';
-        
+                
             $(document).ready(function() {
-                
-                $.ajax(widgetsUri, {
-                    dataType: 'json',
-                    success: function(data) {
-                        createGrid(data);
-                    }
-                });
-                
-                function createGrid(widgets) {
-                    $('.gridster ul').remove();
-                    $('.gridster').append(ich.widgetTemplate({
-                        widgets: widgets
-                    }));
-                    $(".gridster ul").gridster({
-                        widget_margins: [10, 10],
-                        widget_base_dimensions: [140, 140]
-                    });                    
-                }
-                
+                var dashboard = Dash.Dashboard()
+                dashboard.getWidgets('<%= uri %>');
             });
 
         </script>
