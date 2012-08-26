@@ -1,8 +1,8 @@
 
-exports.test = ->
+exports.test = (req, res) ->
     if req.params.type == 'ping'
         res.writeHead 200, {'Content-Type', 'application/json'}
-        res.write '{"ping":"true"}'
+        res.write '{"status":"true"}'
         res.end()
     else
         res.writeHead 404, {'Content-Type', 'text/html'}

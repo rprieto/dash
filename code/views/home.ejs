@@ -10,6 +10,8 @@
     <body>
         
         <div class="gridster">
+            <ul id="dashboard">
+            </ul>
         </div>
         
         <script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
@@ -28,12 +30,9 @@
         </script>
         
         <script id="widgetTemplate" type="text/html">
-            <ul id="dashboard">
-                {{#widgets}}
-                    <li data-row="{{position.row}}" data-col="{{position.col}}" data-sizex="{{size.width}}" data-sizey="{{size.height}}">
-                        {{type}}
-                    </li>
-                {{/widgets}}
+                <li data-row="{{position.row}}" data-col="{{position.col}}" data-sizex="{{size.width}}" data-sizey="{{size.height}}">
+                    {{type}}
+                </li>
             </ul>
         </script>
         
