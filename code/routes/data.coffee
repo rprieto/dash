@@ -7,7 +7,10 @@ exports.test = (req, res) ->
             res.end()
         when 'hudson-build-status'
             res.writeHead 200, {'Content-Type', 'application/json'}
-            res.write '{"status":"passed"}'
+            if (Math.random() * 1000) > 500
+                res.write '{"status":"passed"}'
+            else
+                res.write '{"status":"failed"}'
             res.end()        
         else
             res.writeHead 404, {'Content-Type', 'text/html'}
