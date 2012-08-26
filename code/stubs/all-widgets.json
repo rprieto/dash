@@ -1,5 +1,7 @@
 [
-    { "type": "hudon-build-status" },
+    {
+        "type": "hudon-build-status"
+    },
     { "type": "team-city-build-status" },
     { "type": "ping" },
     { "type": "jira-burn-up" },

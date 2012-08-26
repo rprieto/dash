@@ -1,12 +1,12 @@
 
 # Module dependencies
-
 express = require 'express'
 http = require 'http'
 path = require 'path'
 
-index = require './routes/index'
-widget = require './routes/widget'
+# Routes
+home = require './routes/home'
+widgets = require './routes/widgets'
 
 app = express()
 
@@ -25,10 +25,15 @@ app.configure () ->
     app.use express.static path.join(__dirname, 'public')
 
 app.configure 'development', () ->
+    app.use express.errorHandler({ dumpExceptions: true, showStack: true })
+
+app.configure 'production', ->
     app.use express.errorHandler()
 
-app.get '/', index.show
-app.get '/widget/:type', widget.get
+app.get '/', home.show
+app.get '/widgets', widgets.all
+app.get '/widget/:type/data', widgets.data
+app.get '/widget/:type/test', widgets.test
 
 http.createServer(app).listen app.get('port'), () ->
     console.log 'Express server listening on port ' + app.get('port')
