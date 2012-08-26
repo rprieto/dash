@@ -18,9 +18,11 @@
         
         <script>
         
+            var widgetsUri = '<%= uri %>';
+        
             $(document).ready(function() {
                 
-                $.ajax('/widgets', {
+                $.ajax(widgetsUri, {
                     dataType: 'json',
                     success: function(data) {
                         createGrid(data);

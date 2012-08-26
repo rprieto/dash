@@ -7,6 +7,7 @@ path = require 'path'
 # Routes
 home = require './routes/home'
 widgets = require './routes/widgets'
+data = require './routes/data'
 
 app = express()
 
@@ -30,10 +31,12 @@ app.configure 'development', () ->
 app.configure 'production', ->
     app.use express.errorHandler()
 
-app.get '/', home.show
-app.get '/widgets', widgets.all
-app.get '/widget/:type/data', widgets.data
-app.get '/widget/:type/test', widgets.test
+app.get '/', home.dashboard
+app.get '/test', home.test
+app.get '/widgets/user', widgets.user
+app.get '/widgets/test', widgets.test
+app.get '/widget/:type/data', data.get
+app.get '/widget/:type/test', data.test
 
 http.createServer(app).listen app.get('port'), () ->
     console.log 'Express server listening on port ' + app.get('port')
