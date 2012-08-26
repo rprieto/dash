@@ -3,8 +3,8 @@ window.Dash.Dashboard = ->
     
     dash = []
     
-    Widget = ($elem) ->
-        $.ajax '/widget/ping/data', {
+    Widget = ($elem, dataUri) ->
+        $.ajax dataUri, {
             dataType: 'json'
             success: (data) ->
                 $elem.append data.status
@@ -28,7 +28,7 @@ window.Dash.Dashboard = ->
             $elem = ich.griditem widget
             $('.gridster ul').append $elem
             if (templateName widget) of ich        
-                dash.push Widget($elem)
+                dash.push Widget($elem, widget.dataUri)
             else
                 $elem.append 'Not supported'
             
