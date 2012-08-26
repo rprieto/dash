@@ -12,7 +12,6 @@ Build monitor / information radiator
 * Install Node.js
 
 ```
-bundle install
 npm install
 npm start
 ```
