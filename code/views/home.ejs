@@ -29,11 +29,24 @@
 
         </script>
         
-        <script id="widgetTemplate" type="text/html">
+        <script id="griditem" type="text/html">
                 <li data-row="{{position.row}}" data-col="{{position.col}}" data-sizex="{{size.width}}" data-sizey="{{size.height}}">
                     {{type}}
                 </li>
             </ul>
+        </script>
+        
+        <script id="widget_ping" type="text/html">
+            Ping?
+            <div class="status-{{status}}">
+                {{status}}
+            </div>
+        </script>
+
+        <script id="widget_huson_build_status" type="text/html">
+            Hudson build
+            <div>
+            </div>
         </script>
         
     </body>

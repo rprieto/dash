@@ -3,7 +3,7 @@ window.Dash.Dashboard = ->
     
     dash = []
     
-    Ping = ($elem) ->
+    Widget = ($elem) ->
         $.ajax '/widget/ping/data', {
             dataType: 'json'
             success: (data) ->
@@ -17,15 +17,21 @@ window.Dash.Dashboard = ->
                 createGrid data
         }
 
+    templateName = (widget) ->
+        'widget_' + widget.type.replace /\-/g, '_'
+
     createGrid = (widgets) ->
 
         $('.gridster ul').empty()
 
         widgets.forEach (widget) ->
-            $elem = ich.widgetTemplate widget
-            dash.push Ping($elem)
+            $elem = ich.griditem widget
             $('.gridster ul').append $elem
-
+            if (templateName widget) of ich        
+                dash.push Widget($elem)
+            else
+                $elem.append 'Not supported'
+            
         $(".gridster ul").gridster {
             widget_margins: [10, 10]
             widget_base_dimensions: [140, 140]

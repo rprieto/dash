@@ -1,6 +1,6 @@
 [
     {
-        "type": "hudon-build-status",
+        "type": "hudson-build-status",
         "size": { "width": 1, "height": 1 },
         "position": { "row": 1, "col": 1 }
     },
