@@ -9,21 +9,20 @@ Build monitor / information radiator
 
 ## Running the dashboard
 
-* Install Ruby
 * Install Node.js
-* Go to the project folder and run
 
 ```
 bundle install
 npm install
-foreman start
+npm start
 ```
 
 Then browse to [localhost:3000](http://localhost:3000)
 
 ## Developing
 
+* To run the tests:
+
 ```
-npm install
 mocha
 ```
