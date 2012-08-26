@@ -1,9 +1,22 @@
 [
     {
-        "type": "hudon-build-status"
+        "type": "hudon-build-status",
+        "size": { "width": 1, "height": 1 },
+        "position": { "row": 1, "col": 1 }
     },
-    { "type": "team-city-build-status" },
-    { "type": "ping" },
-    { "type": "jira-burn-up" },
-    { "type": "jira-defects" }
+    {
+        "type": "team-city-build-status",
+        "size": { "width": 1, "height": 1 },
+        "position": { "row": 1, "col": 2 }
+    },
+    {
+        "type": "ping",
+        "size": { "width": 1, "height": 1 },
+        "position": { "row": 2, "col": 1 }
+    },
+    {
+        "type": "jira-burn-up",
+        "size": { "width": 3, "height": 1 },
+        "position": { "row": 3, "col": 2 }
+    }
 ]
