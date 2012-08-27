@@ -5,7 +5,8 @@
         "size": { "width": 1, "height": 1 },
         "options": {
             "title": "Jenkins POM",
-            "project": "http://ci.jenkins-ci.org/job/jenkins_pom"
+            "server": "ci.jenkins-ci.org",
+            "project": "jenkins_pom"
         },
         "position": { "row": 1, "col": 1 }
     },
@@ -15,7 +16,8 @@
         "size": { "width": 1, "height": 1 },
         "options": {
             "title": "Jenkins trunk",
-            "project": "http://ci.jenkins-ci.org/job/jenkins_main_trunk"
+            "server": "ci.jenkins-ci.org",
+            "project": "jenkins_main_trunk"
         },
         "position": { "row": 1, "col": 2 }
     },
@@ -25,7 +27,8 @@
         "size": { "width": 1, "height": 1 },
         "options": {
             "title": "IntelliJ IDEA",
-            "buildType": "http://teamcity.jetbrains.com/guestAuth/app/rest/builds/buildType:bt343"
+            "server": "teamcity.jetbrains.com",
+            "buildType": "bt343"
         },
         "position": { "row": 1, "col": 3 }
     },
@@ -33,20 +36,28 @@
         "type": "ping",
         "dataUri": "/widget/ping/test",
         "size": { "width": 1, "height": 1 },
-        "options": { "title": "Google" },
+        "options": {
+            "title": "Google",
+            "server": "google.com"
+        },
         "position": { "row": 1, "col": 4 }
     },
     {
         "type": "countdown",
         "dataUri": "/widget/countdown/test",
         "size": { "width": 1, "height": 1 },
-        "options": { "title": "in iteration" },
+        "options": {
+            "title": "in iteration",
+            "date": "12-Sep-2012"
+        },
         "position": { "row": 2, "col": 1 }
     },
     {
         "type": "jira-burn-up",
         "dataUri": "/widget/jira-burn-up/test",
         "size": { "width": 3, "height": 1 },
+        "options": {
+        },
         "position": { "row": 2, "col": 2 }
     },
     {
@@ -55,7 +66,8 @@
         "size": { "width": 2, "height": 1 },
         "options": {
             "title": "Spring integration",
-            "project": "https://sonar.springsource.org/api/resources?resource=org.springframework.integration:spring-integration&metrics=coverage"
+            "server": "sonar.springsource.org",
+            "project": "org.springframework.integration:spring-integration"
         },
         "position": { "row": 3, "col": 1 }
     },
@@ -65,7 +77,8 @@
         "size": { "width": 1, "height": 1 },
         "options": {
             "title": "Greenhopper",
-            "project": ""
+            "server": "jira.atlassian.com",
+            "project": "GHS"
         },
         "position": { "row": 3, "col": 3 }
     }
