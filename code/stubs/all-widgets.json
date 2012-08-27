@@ -38,7 +38,8 @@
     {
         "type": "countdown",
         "dataUri": "/widget/countdown/test",
-        "size": { "width": 2, "height": 1 },
+        "size": { "width": 1, "height": 1 },
+        "options": { "title": "in iteration" },
         "position": { "row": 3, "col": 2 }
     }
 ]

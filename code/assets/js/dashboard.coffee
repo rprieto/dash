@@ -23,7 +23,10 @@ window.Dash.Dashboard = ->
     
     Widget = ($elem, widget) ->
         refresh = () ->
-            setTimeout ( -> $elem.spin() ), 200
+            setTimeout (->
+                if $elem.find('.content').length is 0
+                    $elem.spin()
+            ), 100
             $.ajax widget.dataUri, {
                 dataType: 'json'
                 success: (data) ->
@@ -34,7 +37,7 @@ window.Dash.Dashboard = ->
                     $elem.append ich.widget_no_response widget
             }
         refresh()
-        setInterval refresh, (5 * 1000)
+        setInterval refresh, (60 * 1000)
     
     getWidgets = (uri) ->
         $.ajax uri, {
