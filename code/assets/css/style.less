@@ -11,7 +11,15 @@ ul, ol {
 }
 
 body {
-    background-color: #666;
+    background: black;
+    font-size: 1.2em;
+}
+
+body {
+    background-color: #ddd;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, .2) 1px, transparent 1px), -webkit-linear-gradient(0deg, rgba(0, 0, 0, .2) 1px, transparent 1px);
+    background-size: 20px 20px, 20px 20px;
+    background-position: 10px 0px, 10px 0px;
 }
 
 .gridster {
@@ -28,8 +36,8 @@ body {
 .gridster .gs_w {
     background: #FFF;
     cursor: pointer;
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    box-shadow: -1px 1px 7px rgba(0, 0, 0, 0.5);
 }
 
 .gridster .player {
@@ -42,7 +50,6 @@ body {
     background-image: url(../img/sprite.png);
     background-repeat: no-repeat;
     background-position: 37px -169px;
-
 }
 
 .gridster .preview-holder {
@@ -51,14 +58,43 @@ body {
     background: rgba(255,255,255,.2)!important;
 }
 
-.widget_ping .status-ok {
-    background-color: green
-}
-    
-.widget_hudson_build_status .status-passed {
-    background-color: green
+.gridster .content {
+    padding: 10px;
 }
 
-.widget_hudson_build_status .status-failed {
-    background-color: red
+.gs_w .title {
+    font-size: 1.5em;
+    font-weight: bold;    
+}
+
+.gs_w .type {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 0.6em;
+    color: #111;
+}
+
+.gs_w  .unsupported {
+    background-color: gray;
+    background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,.5) 15px, rgba(255,255,255,.5) 30px);
+}
+
+.gs_w .widget.status-pass {
+    background-color: rgba(50, 200, 50, 0.5);
+}
+
+.gs_w .widget.status-fail {
+    background-color: rgba(230, 10, 10, 0.9);
+}
+
+.widget_ping .icon-ok {
+    color: green;
+    font-size: 3.5em;
+    text-align: center;
+    width: 100%;
+}
+
+.widget_hudson_build_status .build {
+    font-size: 1.5em;
 }

@@ -4,11 +4,18 @@ window.Dash.Dashboard = ->
     dash = []
     
     Widget = ($elem, widget) ->
-        $.ajax widget.dataUri, {
-            dataType: 'json'
-            success: (data) ->
-                $elem.append ich[templateName widget] data
-        } 
+        refresh = () ->
+            $.ajax widget.dataUri, {
+                dataType: 'json'
+                success: (data) ->
+                    $elem.empty()
+                    $elem.append ich[templateName widget] $.extend(widget, data)
+                error: ->
+                    $elem.empty()
+                    $elem.append ich.widget_no_response widget
+            }
+        refresh()
+        setInterval refresh, (5 * 1000)
     
     getWidgets = (uri) ->
         $.ajax uri, {
@@ -25,13 +32,14 @@ window.Dash.Dashboard = ->
         $('.gridster ul').empty()
 
         widgets.forEach (widget) ->
-            $elem = ich.griditem widget
-            $elem.addClass(templateName widget)
-            $('.gridster ul').append $elem
             if (templateName widget) of ich        
+                $elem = ich.griditem widget
+                $elem.addClass(templateName widget)
                 dash.push Widget($elem, widget)
             else
-                $elem.append 'Not supported'
+                $elem = ich.griditem widget
+                $elem.append ich.widget_not_supported widget
+            $('.gridster ul').append $elem
             
         $(".gridster ul").gridster {
             widget_margins: [10, 10]
