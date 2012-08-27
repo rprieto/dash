@@ -31,6 +31,13 @@
         "dataUri": "/widget/ping/test",
         "size": { "width": 1, "height": 1 },
         "options": { "title": "Dev" },
+        "position": { "row": 1, "col": 4 }
+    },
+    {
+        "type": "countdown",
+        "dataUri": "/widget/countdown/test",
+        "size": { "width": 1, "height": 1 },
+        "options": { "title": "in iteration" },
         "position": { "row": 2, "col": 1 }
     },
     {
@@ -38,12 +45,5 @@
         "dataUri": "/widget/hira-burn-up/test",
         "size": { "width": 3, "height": 1 },
         "position": { "row": 2, "col": 2 }
-    },
-    {
-        "type": "countdown",
-        "dataUri": "/widget/countdown/test",
-        "size": { "width": 1, "height": 1 },
-        "options": { "title": "in iteration" },
-        "position": { "row": 3, "col": 2 }
     }
 ]
