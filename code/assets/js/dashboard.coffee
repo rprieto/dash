@@ -21,8 +21,22 @@ window.Dash.Dashboard = ->
         left: 'auto'
     }
     
+    createPercentageChart = (targetId, percentage) ->
+        new pv.Panel()
+            .canvas(targetId)
+            .width(110)
+            .height(50)
+            .add(pv.Bar)
+            .data([100, percentage])
+            .top(10)
+            .left(0)
+            .width((d) -> d)
+            .height(40)
+            .fillStyle(pv.colors('#999', '#181'))
+            .root.render()
+    
     Widget = ($elem, widget) ->
-        refresh = () ->
+        refresh = ->
             setTimeout (->
                 if $elem.find('.content').length is 0
                     $elem.spin()
@@ -34,6 +48,9 @@ window.Dash.Dashboard = ->
                     $child = ich[templateName widget] $.extend(widget, data)
                     $child.addClass(className widget)
                     $elem.append $child
+                    if widget.type is 'sonar-code-coverage'
+                        id = $child.find('.chart').attr 'id'
+                        createPercentageChart id, data.value
                 error: ->
                     $elem.empty()
                     $elem.append ich.widget_no_response widget

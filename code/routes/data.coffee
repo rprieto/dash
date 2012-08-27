@@ -54,7 +54,8 @@ exports.test = (req, res) ->
         when 'sonar-code-coverage'
             res.writeHead 200, {'Content-Type', 'application/json'}
             sonarCoverage (data) ->
-                res.write '{"value":"' + data.value + '"}'
+                id = Math.floor Math.random * 100000
+                res.write '{"value":"' + data.value + '", "chartId": "id' + id + '"}'
                 res.end()
         when 'countdown'
             res.writeHead 200, {'Content-Type', 'application/json'}
