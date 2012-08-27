@@ -4,7 +4,7 @@
         "dataUri": "/widget/hudson-build-status/test",
         "size": { "width": 1, "height": 1 },
         "options": {
-            "title": "Website",
+            "title": "Jenkins POM",
             "project": "http://ci.jenkins-ci.org/job/jenkins_pom"
         },
         "position": { "row": 1, "col": 1 }
@@ -13,7 +13,10 @@
         "type": "hudson-build-status",
         "dataUri": "/widget/hudson-build-status/test",
         "size": { "width": 1, "height": 1 },
-        "options": { "title": "Config" },
+        "options": {
+            "title": "Jenkins trunk",
+            "project": "http://ci.jenkins-ci.org/job/jenkins_main_trunk"
+        },
         "position": { "row": 1, "col": 2 }
     },
     {
@@ -21,8 +24,8 @@
         "dataUri": "/widget/teamcity-build-status/test",
         "size": { "width": 1, "height": 1 },
         "options": {
-            "title": "Website",
-            "buildType": "http://teamcity.jetbrains.com/httpAuth/app/rest/builds/buildType:bt343"
+            "title": "IntelliJ IDEA",
+            "buildType": "http://teamcity.jetbrains.com/guestAuth/app/rest/builds/buildType:bt343"
         },
         "position": { "row": 1, "col": 3 }
     },
@@ -30,7 +33,7 @@
         "type": "ping",
         "dataUri": "/widget/ping/test",
         "size": { "width": 1, "height": 1 },
-        "options": { "title": "Dev" },
+        "options": { "title": "Google" },
         "position": { "row": 1, "col": 4 }
     },
     {
