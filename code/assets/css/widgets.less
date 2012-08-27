@@ -1,58 +1,66 @@
 
-.gridster .content {
-    padding: 10px;
-}
+.widget {
 
-.gs_w .title {
-    font-size: 1.5em;
-    font-weight: bold;    
-}
+    .status-pass {
+        background-color: rgba(50, 200, 50, 0.5);
+    }
 
-.gs_w .type {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    font-size: 0.6em;
-    color: rgba(40,40,40,0.7);
-}
+    .status-fail {
+        background-color: rgba(230, 10, 10, 0.9);
+    }
 
-.gs_w  .unsupported {
-    background-color: gray;
-    background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,.5) 15px, rgba(255,255,255,.5) 30px);
-}
+    .unsupported {
+        background-color: gray;
+        background-image: -webkit-repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,.5) 15px, rgba(255,255,255,.5) 30px);
+    }
 
-.gs_w .widget.status-pass {
-    background-color: rgba(50, 200, 50, 0.5);
-}
+    .title {
+        font-size: 1.5em;
+        font-weight: bold;    
+    }
 
-.gs_w .widget.status-fail {
-    background-color: rgba(230, 10, 10, 0.9);
-}
+    .type {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        font-size: 0.6em;
+        color: rgba(40,40,40,0.7);
+    }
 
-.widget_ping .icon-ok {
-    color: green;
-    font-size: 3.5em;
-    text-align: center;
-    width: 100%;
-}
+    .content {
+        padding: 10px;
+    }
 
-.widget_hudson_build_status .build {
-    font-size: 1.5em;
-}
+    .ping .icon-ok {
+        color: green;
+        font-size: 3.5em;
+        text-align: center;
+        width: 100%;
+    }
 
-.widget_countdown .number {
-    float: left;
-    font-size: 3.2em;
-    margin-right: 0.2em;
-    font-weight: bold;
-}
+    .hudson_build_status .build {
+        font-size: 1.5em;
+    }
 
-.widget_countdown .days {
-    float: left;
-    margin-top: 0.5em;
-    font-size: 1.1em;
-}
+    .teamcity_build_status .build {
+        font-size: 1.5em;
+    }
 
-.widget_countdown .subtext {
-    clear: both;
+    .countdown .number {
+        float: left;
+        font-size: 3.2em;
+        margin-right: 0.2em;
+        font-weight: bold;
+    }
+
+    .countdown .days {
+        float: left;
+        margin-top: 0.5em;
+        font-size: 1.1em;
+    }
+
+    .countdown .subtext {
+        clear: both;
+    }
+
 }

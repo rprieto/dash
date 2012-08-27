@@ -31,7 +31,9 @@ window.Dash.Dashboard = ->
                 dataType: 'json'
                 success: (data) ->
                     $elem.empty()
-                    $elem.append ich[templateName widget] $.extend(widget, data)
+                    $child = ich[templateName widget] $.extend(widget, data)
+                    $child.addClass(className widget)
+                    $elem.append $child
                 error: ->
                     $elem.empty()
                     $elem.append ich.widget_no_response widget
@@ -46,8 +48,11 @@ window.Dash.Dashboard = ->
                 createGrid data
         }
 
+    className = (widget) ->
+        widget.type.replace /\-/g, '_'
+
     templateName = (widget) ->
-        'widget_' + widget.type.replace /\-/g, '_'
+        'widget_' + className widget
 
     createGrid = (widgets) ->
 
@@ -56,7 +61,6 @@ window.Dash.Dashboard = ->
         widgets.forEach (widget) ->
             if (templateName widget) of ich        
                 $elem = ich.griditem widget
-                $elem.addClass(templateName widget)
                 dash.push Widget($elem, widget)
             else
                 $elem = ich.griditem widget
