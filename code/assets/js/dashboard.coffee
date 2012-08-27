@@ -3,8 +3,27 @@ window.Dash.Dashboard = ->
     
     dash = []
     
+    loadingOpts = {
+        lines: 9
+        length: 7
+        width: 4
+        radius: 10
+        corners: 1
+        rotate: 0
+        color: '#000'
+        speed: 1
+        trail: 35
+        shadow: false
+        hwaccel: true
+        className: 'spinner'
+        zIndex: 2e9
+        top: 'auto'
+        left: 'auto'
+    }
+    
     Widget = ($elem, widget) ->
         refresh = () ->
+            setTimeout ( -> $elem.spin() ), 200
             $.ajax widget.dataUri, {
                 dataType: 'json'
                 success: (data) ->
