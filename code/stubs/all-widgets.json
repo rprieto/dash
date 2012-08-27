@@ -45,8 +45,18 @@
     },
     {
         "type": "jira-burn-up",
-        "dataUri": "/widget/hira-burn-up/test",
+        "dataUri": "/widget/jira-burn-up/test",
         "size": { "width": 3, "height": 1 },
         "position": { "row": 2, "col": 2 }
+    },
+    {
+        "type": "sonar-code-coverage",
+        "dataUri": "/widget/sonar-code-coverage/test",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "Spring intg",
+            "project": "https://sonar.springsource.org/api/resources?resource=org.springframework.integration:spring-integration&metrics=coverage"
+        },
+        "position": { "row": 3, "col": 1 }
     }
 ]

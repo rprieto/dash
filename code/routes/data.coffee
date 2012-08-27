@@ -18,6 +18,13 @@ teamCity = (callback) ->
             result: data.status            
         }
 
+sonarCoverage = (callback) ->
+    uri = 'https://sonar.springsource.org/api/resources?resource=org.springframework.integration:spring-integration&metrics=coverage'
+    request.get {url: uri, json: true}, (error, response, data) ->
+        callback {
+            value: Math.floor data[0].msr[0].val   
+        }
+
 exports.test = (req, res) ->
     switch req.params.type
         when 'ping'
@@ -37,17 +44,22 @@ exports.test = (req, res) ->
             hudson (data) ->
                 status = if data.result is 'SUCCESS' then "pass" else "fail"
                 res.write '{"build":"' + data.number + '", "status":"' + status + '"}'
-                res.end() 
+                res.end()
         when 'teamcity-build-status'
             res.writeHead 200, {'Content-Type', 'application/json'}
             teamCity (data) ->
                 status = if data.result is 'SUCCESS' then "pass" else "fail"
                 res.write '{"build":"' + data.number + '", "status":"' + status + '"}'
-                res.end() 
+                res.end()
+        when 'sonar-code-coverage'
+            res.writeHead 200, {'Content-Type', 'application/json'}
+            sonarCoverage (data) ->
+                res.write '{"value":"' + data.value + '"}'
+                res.end()
         when 'countdown'
             res.writeHead 200, {'Content-Type', 'application/json'}
             res.write '{"days":5}'
-            res.end()                
+            res.end()
         else
             res.writeHead 404, {'Content-Type', 'text/html'}
             res.write 'Not supported'
