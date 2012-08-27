@@ -2,14 +2,21 @@ request = require 'request'
 
 hudson = (callback) ->
     projectUri = 'http://ci.jenkins-ci.org/job/jenkins_pom/api/json?pretty=true'
-    request projectUri, (error, response, body) ->
-        buildUri = (JSON.parse body).lastBuild.url + 'api/json?pretty=true'
-        request buildUri, (error, response, body) ->
-            buildData = JSON.parse body
+    request {url: projectUri, json: true}, (error, response, data) ->
+        buildUri = data.lastBuild.url + 'api/json?pretty=true'
+        request {url: buildUri, json: true}, (error, response, buildData) ->
             callback {
                 number: buildData.number
-                result: buildData.result        
+                result: buildData.result
             }
+
+teamCity = (callback) ->
+    buildUri = 'http://teamcity.jetbrains.com/guestAuth/app/rest/builds/buildType:bt343'
+    request.get {url: buildUri, json: true}, (error, response, data) ->
+        callback {
+            number: data.number
+            result: data.status            
+        }
 
 exports.test = (req, res) ->
     switch req.params.type
@@ -28,6 +35,12 @@ exports.test = (req, res) ->
         when 'hudson-build-status'
             res.writeHead 200, {'Content-Type', 'application/json'}
             hudson (data) ->
+                status = if data.result is 'SUCCESS' then "pass" else "fail"
+                res.write '{"build":"' + data.number + '", "status":"' + status + '"}'
+                res.end() 
+        when 'teamcity-build-status'
+            res.writeHead 200, {'Content-Type', 'application/json'}
+            teamCity (data) ->
                 status = if data.result is 'SUCCESS' then "pass" else "fail"
                 res.write '{"build":"' + data.number + '", "status":"' + status + '"}'
                 res.end() 

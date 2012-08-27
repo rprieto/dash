@@ -73,6 +73,16 @@
             </div>
         </script>
 
+        <script id="widget_teamcity_build_status" type="text/html">
+            <div class="widget status-{{status}}" data-sizey="{{size.height}}">
+                <span class="type">Team city</span>
+                <div class="content">
+                    <div class="title">{{options.title}}</div>
+                    <div class="build">#{{build}}</div>
+                </div>
+            </div>
+        </script>
+
         <script id="widget_countdown" type="text/html">
             <div class="widget" data-sizey="{{size.height}}">
                 <span class="type">Countdown</span>
