@@ -52,9 +52,9 @@
     {
         "type": "sonar-code-coverage",
         "dataUri": "/widget/sonar-code-coverage/test",
-        "size": { "width": 1, "height": 1 },
+        "size": { "width": 2, "height": 1 },
         "options": {
-            "title": "Spring intg",
+            "title": "Spring integration",
             "project": "https://sonar.springsource.org/api/resources?resource=org.springframework.integration:spring-integration&metrics=coverage"
         },
         "position": { "row": 3, "col": 1 }

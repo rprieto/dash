@@ -16,7 +16,9 @@
 
     .title {
         font-size: 1.5em;
-        font-weight: bold;    
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .type {
@@ -31,6 +33,20 @@
         padding: 10px;
     }
 
+    .column {
+        float: left;
+        width: 120px;
+        margin: 0 20px;
+    }
+
+    .column:first-child {
+        margin-left: 0;
+    }
+        
+    .column:last-child {
+        margin-right: 0;
+    }
+    
     .ping .icon-ok {
         color: green;
         font-size: 3.5em;
@@ -46,8 +62,12 @@
         font-size: 1.5em;
     }
     
-    .sonar_code_coverage .title {
-        font-size: 1.1em;
+    .sonar_code_coverage .subtext {
+        margin-top: 0.5em;
+    }
+
+    .sonar_code_coverage .value {
+        font-size: 1.8em;
     }
 
     .countdown .number {
