@@ -25,6 +25,22 @@ sonarCoverage = (callback) ->
             value: Math.floor data[0].msr[0].val   
         }
 
+sonarMetrics = (list, callback) ->
+    commaSep = list.join ','
+    uri = 'https://sonar.springsource.org/api/resources?resource=org.springframework.integration:spring-integration&metrics=' + commaSep
+    request.get {url: uri, json: true}, (error, response, data) ->
+        callback {
+            value: Math.floor data[0].msr[0].val   
+        }
+
+jiraIssues = (callback) ->
+    uri = 'https://jira.atlassian.com/rest/api/2/search?jql=project+%3D+GHS+AND+resolution+%3D+Unresolved+AND+priority+%3D+Blocker+ORDER+BY+key+DESC&mode=hide'
+    request.get {url: uri, json: true}, (error, response, data) ->
+        callback {
+            blockers: data.total
+        }
+
+
 exports.test = (req, res) ->
     switch req.params.type
         when 'ping'
@@ -57,6 +73,11 @@ exports.test = (req, res) ->
                 id = Math.floor Math.random * 100000
                 res.write '{"value":"' + data.value + '", "chartId": "id' + id + '"}'
                 res.end()
+        when 'jira-issues-blockers'
+            res.writeHead 200, {'Content-Type', 'application/json'}
+            jiraIssues (data) ->
+                res.write '{"blockers":"' + data.blockers + '"}'
+                res.end()        
         when 'countdown'
             res.writeHead 200, {'Content-Type', 'application/json'}
             res.write '{"days":5}'

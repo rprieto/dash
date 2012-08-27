@@ -58,5 +58,15 @@
             "project": "https://sonar.springsource.org/api/resources?resource=org.springframework.integration:spring-integration&metrics=coverage"
         },
         "position": { "row": 3, "col": 1 }
+    },
+    {
+        "type": "jira-issues-blockers",
+        "dataUri": "/widget/jira-issues-blockers/test",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "Greenhopper",
+            "project": ""
+        },
+        "position": { "row": 3, "col": 3 }
     }
 ]
