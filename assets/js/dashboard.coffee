@@ -121,6 +121,7 @@ window.Dash.Dashboard = ->
             widget_margins: [10, 10]
             widget_base_dimensions: [140, 140]
             extra_rows: 1
+            extra_cols: 1
         }
 
     {
