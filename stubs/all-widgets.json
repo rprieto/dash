@@ -57,6 +57,8 @@
         "dataUri": "/widget/jira-burn-up/test",
         "size": { "width": 3, "height": 1 },
         "options": {
+            "title": "My project",
+            "project": "NameInJira"
         },
         "position": { "row": 2, "col": 2 }
     },

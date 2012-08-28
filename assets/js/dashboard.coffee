@@ -35,6 +35,20 @@ window.Dash.Dashboard = ->
             .fillStyle(pv.colors('#999', '#181'))
             .root.render()
     
+    createAreaChart = (targetId) ->
+        new pv.Panel()
+            .canvas(targetId)
+            .width(110)
+            .height(50)
+            .add(pv.Bar)
+            .data([100, 70])
+            .top(10)
+            .left(0)
+            .width((d) -> d)
+            .height(40)
+            .fillStyle(pv.colors('#999', '#181'))
+            .root.render()      
+    
     Widget = ($elem, widget) ->
         refresh = ->
             setTimeout (->
@@ -51,6 +65,9 @@ window.Dash.Dashboard = ->
                     if widget.type is 'sonar-code-coverage'
                         id = $child.find('.chart').attr 'id'
                         createPercentageChart id, data.value
+                    if widget.type is 'jira-burn-up'
+                        id = $child.find('.chart').attr 'id'
+                        createAreaChart id, data.value
                 error: ->
                     $elem.empty()
                     $elem.append ich.widget_no_response widget

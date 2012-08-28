@@ -21,3 +21,7 @@ exports.jiraIssues = (jsonResponse) ->
                 critical: critical 
                 status: status blockers, critical
             }
+
+exports.burnUp = (jsonResponse) ->
+    id = Math.floor Math.random() * 100000
+    jsonResponse { chartId: 'id' + id }
