@@ -1,6 +1,3 @@
-sys = require 'sys'
-exec = require('child_process').exec
-
 DAY = 1000 * 60 * 60  * 24
 
 difference = (date1, date2) ->
