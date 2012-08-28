@@ -36,19 +36,35 @@ window.Dash.Dashboard = ->
             .root.render()
     
     createAreaChart = (targetId) ->
-        new pv.Panel()
+        data = [
+            {x:0,  y:0},
+            {x:10, y:3},
+            {x:20, y:9},
+            {x:30, y:11},
+            {x:40, y:14},
+            {x:40, y:0},
+            {x:100, y:0},
+        ]
+        w = 410
+        h = 90
+        x = pv.Scale.linear(data, (d) -> d.x).range(0, w)
+        y = pv.Scale.linear(data, (d) -> d.y).range(0, h - 20)
+
+        vis = new pv.Panel()
             .canvas(targetId)
-            .width(110)
-            .height(50)
-            .add(pv.Bar)
-            .data([100, 70])
-            .top(10)
-            .left(0)
-            .width((d) -> d)
-            .height(40)
-            .fillStyle(pv.colors('#999', '#181'))
-            .root.render()      
-    
+            .width(w)
+            .height(h)
+            .add(pv.Area)
+            .data(data)
+            .bottom(0)
+            .right(0)
+            .left((d) -> x(d.x))
+            .height((d) -> y(d.y))
+            .fillStyle("rgb(121,173,210)")
+            .anchor("top").add(pv.Line)
+            .lineWidth(2)
+            .root.render()
+
     Widget = ($elem, widget) ->
         refresh = ->
             setTimeout (->
