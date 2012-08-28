@@ -35,18 +35,7 @@ window.Dash.Dashboard = ->
             .fillStyle(pv.colors('#999', '#181'))
             .root.render()
     
-    createAreaChart = (targetId) ->
-        data = [
-            {x:0,  y:0},
-            {x:10, y:3},
-            {x:20, y:9},
-            {x:30, y:11},
-            {x:40, y:14},
-            {x:50, y:14},
-            {x:60, y:21},
-            {x:60, y:0},
-            {x:100, y:0},
-        ]
+    createAreaChart = (targetId, data) ->
         w = 410
         h = 90
         x = pv.Scale.linear(data, (d) -> d.x).range(0, w)
@@ -85,7 +74,7 @@ window.Dash.Dashboard = ->
                         createPercentageChart id, data.value
                     if widget.type is 'jira-burn-up'
                         id = $child.find('.chart').attr 'id'
-                        createAreaChart id, data.value
+                        createAreaChart id, data.pointsData
                 error: ->
                     $elem.empty()
                     $elem.append ich.widget_no_response widget
