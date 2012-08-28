@@ -42,7 +42,9 @@ window.Dash.Dashboard = ->
             {x:20, y:9},
             {x:30, y:11},
             {x:40, y:14},
-            {x:40, y:0},
+            {x:50, y:14},
+            {x:60, y:21},
+            {x:60, y:0},
             {x:100, y:0},
         ]
         w = 410
@@ -62,7 +64,7 @@ window.Dash.Dashboard = ->
             .height((d) -> y(d.y))
             .fillStyle("rgb(121,173,210)")
             .anchor("top").add(pv.Line)
-            .lineWidth(2)
+            .lineWidth(1)
             .root.render()
 
     Widget = ($elem, widget) ->
