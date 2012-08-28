@@ -1,12 +1,18 @@
 
 .widget {
 
+    overflow: hidden;
+
     .status-pass {
         background-color: rgba(50, 200, 50, 0.5);
     }
 
+    .status-warn {
+        background-color: rgba(255, 165, 0, 0.7);
+    }
+    
     .status-fail {
-        background-color: rgba(230, 10, 10, 0.9);
+        background-color: rgba(230, 10, 10, 0.85);
     }
 
     .unsupported {
@@ -47,13 +53,47 @@
         margin-right: 0;
     }
     
-    .ping .icon-ok {
-        color: green;
-        font-size: 3.5em;
-        text-align: center;
-        width: 100%;
-    }
+    .ping {
+    
+        .icon-ok, .icon-remove {
+            font-size: 3.5em;
+            text-align: center;
+            width: 100%;
+        }
 
+        .icon-ok {
+            color: #080;
+        }
+
+        .icon-remove {
+            color: #a00;
+        }
+
+    }
+    
+    .countdown {
+    
+        padding-left: 0.3em;
+        
+        .number {
+            float: left;
+            font-size: 3.2em;
+            margin-right: 0.2em;
+            font-weight: bold;
+        }
+    
+        .days {
+            float: left;
+            margin-top: 0.5em;
+            font-size: 1.1em;
+        }
+
+        .subtext {
+            clear: both;
+        }
+           
+    }
+    
     .hudson_build_status .build {
         font-size: 1.5em;
     }
@@ -62,29 +102,52 @@
         font-size: 1.5em;
     }
     
-    .sonar_code_coverage .subtext {
-        margin-top: 0.5em;
+    .sonar_code_coverage {
+    
+        .subtext {
+            margin-top: 0.5em;
+        }
+
+        .value {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+    
     }
 
-    .sonar_code_coverage .value {
-        font-size: 1.8em;
-    }
+    .jira_issues {
 
-    .countdown .number {
-        float: left;
-        font-size: 3.2em;
-        margin-right: 0.2em;
-        font-weight: bold;
-    }
+         .issues {
+             font-size: 1.2em;
+         }
 
-    .countdown .days {
-        float: left;
-        margin-top: 0.5em;
-        font-size: 1.1em;
-    }
+         .icon-remove-circle {
+             position: absolute;
+             left: -0.44em;
+             bottom: -0.44em;
+             font-size: 3.5em;
+             color: #eee;
+         }
 
-    .countdown .subtext {
-        clear: both;
-    }
+     }
+     
+    .twitter_hashtag {
 
+        .tweet {
+            margin-top: 0.5em;
+            font-size: 0.85em;
+            font-style: italic;
+            color: #333;
+        }
+
+        .icon-twitter {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 2em;
+            color: #aaa;
+        }
+
+    }    
+    
 }
