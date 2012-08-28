@@ -1,0 +1,69 @@
+[
+    {
+        "type": "hudson-build-status",
+        "position": { "row": 1, "col": 1 },
+        "options": {
+            "title": "Jenkins POM",
+            "server": "ci.jenkins-ci.org",
+            "project": "jenkins_pom"
+        }
+    },
+    {
+        "type": "hudson-build-status",
+        "position": { "row": 1, "col": 2 },
+        "options": {
+            "title": "Jenkins trunk",
+            "server": "ci.jenkins-ci.org",
+            "project": "jenkins_main_trunk"
+        }
+    },
+    {
+        "type": "teamcity-build-status",
+        "position": { "row": 1, "col": 3 },
+        "options": {
+            "title": "IntelliJ IDEA",
+            "server": "teamcity.jetbrains.com",
+            "buildType": "bt343"
+        }
+    },
+    {
+        "type": "ping",
+        "position": { "row": 1, "col": 4 },
+        "options": {
+            "title": "Google",
+            "server": "google.com"
+        }
+    },
+    {
+        "type": "countdown",
+        "position": { "row": 2, "col": 1 },
+        "options": {
+            "title": "in iteration",
+            "date": "12-Sep-2012"
+        }
+    },
+    {
+        "type": "jira-burn-up",
+        "position": { "row": 2, "col": 2 },
+        "options": {
+        }
+    },
+    {
+        "type": "sonar-code-coverage",
+        "position": { "row": 3, "col": 1 },
+        "options": {
+            "title": "Spring integration",
+            "server": "sonar.springsource.org",
+            "project": "org.springframework.integration:spring-integration"
+        }
+    },
+    {
+        "type": "jira-issues",
+        "position": { "row": 3, "col": 3 },
+        "options": {
+            "title": "GHS",
+            "server": "jira.atlassian.com",
+            "project": "GHS"
+        }
+    }
+]
