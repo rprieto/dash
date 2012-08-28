@@ -1,5 +1,4 @@
 should = require 'should'
-infinite = require '../src/dash'
 
 describe 'dash', ->
     
