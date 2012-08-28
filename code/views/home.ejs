@@ -59,11 +59,22 @@
                 <span class="type">Ping</span>
                 <div class="content">
                     <div class="title">{{options.title}}</div>
-                    <div class="icon-ok"></div>
+                    <div class="icon-{{icon}}"></div>
                 </div>
             </div>
         </script>
 
+        <script id="widget_countdown" type="text/html">
+            <div class="widget" data-sizey="{{size.height}}">
+                <span class="type">Countdown</span>
+                <div class="content">
+                    <span class="number">{{days}}</span>
+                    <span class="days">days <br />left</span>
+                    <div class="subtext">{{options.title}}</div>
+                </div>
+            </div>
+        </script>
+        
         <script id="widget_hudson_build_status" type="text/html">
             <div class="widget status-{{status}}" data-sizey="{{size.height}}">
                 <span class="type">Hudson</span>
@@ -100,23 +111,26 @@
             </div>
         </script>
 
-
-        <script id="widget_jira_issues_blockers" type="text/html">
-            <div class="widget" data-sizey="{{size.height}}">
-                <span class="type">Jira blockers</span>
+        <script id="widget_jira_issues" type="text/html">
+            <div class="widget status-{{status}}" data-sizey="{{size.height}}">
+                <span class="type">Jira issues</span>
                 <div class="content">
-                    <span class="number">{{blockers}}</span>
+                    <div class="title">{{options.title}}</div>
+                    <div class="issues">
+                        <div>{{blockers}} blocker</div>
+                        <div>{{critical}} critical</div>
+                    </div>
+                    <span class="icon-remove-circle"></span>
                 </div>
             </div>
         </script>
         
-        <script id="widget_countdown" type="text/html">
+        <script id="widget_twitter_hashtag" type="text/html">
             <div class="widget" data-sizey="{{size.height}}">
-                <span class="type">Countdown</span>
+                <span class="type">Twitter</span>
                 <div class="content">
-                    <span class="number">{{days}}</span>
-                    <span class="days">days <br />left</span>
-                    <div class="subtext">{{options.title}}</div>
+                    <span class="tweet">{{tweet}}</span>
+                    <span class="icon-twitter"></span>
                 </div>
             </div>
         </script>

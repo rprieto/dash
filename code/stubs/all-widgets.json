@@ -72,13 +72,22 @@
         "position": { "row": 3, "col": 1 }
     },
     {
-        "type": "jira-issues-blockers",
-        "dataUri": "/widget/jira-issues-blockers/test",
+        "type": "jira-issues",
+        "dataUri": "/widget/jira-issues/test",
         "size": { "width": 1, "height": 1 },
         "options": {
-            "title": "Greenhopper",
+            "title": "GHS",
             "server": "jira.atlassian.com",
             "project": "GHS"
+        },
+        "position": { "row": 2, "col": 4 }
+    },
+    {
+        "type": "twitter-hashtag",
+        "dataUri": "/widget/twitter-hashtag/test",
+        "size": { "width": 2, "height": 1 },
+        "options": {
+            "hashtag": "build"
         },
         "position": { "row": 3, "col": 3 }
     }
