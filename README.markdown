@@ -1,6 +1,7 @@
 # dash
 
 Build monitor / information radiator
+
 [![Build Status](https://secure.travis-ci.org/rprieto/dash.png?branch=master)](http://travis-ci.org/rprieto/dash)
 
 ## Contributors
