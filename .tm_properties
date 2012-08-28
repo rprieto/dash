@@ -1,5 +1,5 @@
 exclude = '{$exclude,node_modules}'
-include = '{$include,.gitignore,code/.travis.yml}'
+include = '{$include,.gitignore,.travis.yml}'
 
 softWrap = true  
 tabSize = 4  
