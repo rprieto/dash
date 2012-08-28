@@ -1,6 +1,7 @@
 # dash
 
 Build monitor / information radiator
+[![Build Status](https://secure.travis-ci.org/rprieto/dash.png?branch=master)](http://travis-ci.org/rprieto/dash)
 
 ## Contributors
 
@@ -23,5 +24,5 @@ Then browse to [localhost:3000](http://localhost:3000)
 * To run the tests:
 
 ```
-mocha
+npm test
 ```
