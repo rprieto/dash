@@ -4,6 +4,10 @@ Build monitor / information radiator
 
 [![Build Status](https://secure.travis-ci.org/rprieto/dash.png?branch=master)](http://travis-ci.org/rprieto/dash)
 
+## Example
+
+![Sample dashboard](https://raw.github.com/rprieto/dash/master/demo/screenshot1.png)
+
 ## Contributors
 
 * [Andrew Jones](https://github.com/akjones)
