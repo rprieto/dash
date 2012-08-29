@@ -43,6 +43,8 @@
 
 - List of widgets
 - Position, options
+- Multipe dashboards
+    per instance? per route?
 
 ## Modularity
 
@@ -50,3 +52,7 @@
 - Does widget = Server JS + Client JS + HTML template
 - How to deliver them easily?
 
+## Design
+
+- make it look better
+- better name?
