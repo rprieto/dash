@@ -11,12 +11,14 @@ status = (blockers, criticals) ->
     else
         'pass'
 
-exports.jiraIssues = (jsonResponse) ->
-    request.get {url: (uriForPriority 'Blocker'), json: true}, (error, response, blockerData) ->
-        request.get {url: (uriForPriority 'Critical'), json: true}, (error, response, criticalData) ->
+exports.jiraIssues = (error, success) ->
+    request.get {url: (uriForPriority 'Blocker'), json: true}, (err, response, blockerData) ->
+        return error 'getting blockers' if response.statusCode isnt 200
+        request.get {url: (uriForPriority 'Critical'), json: true}, (err, response, criticalData) ->
+            return error 'getting criticals' if response.statusCode isnt 200
             blockers = blockerData.total || 0
             critical = criticalData.total || 0
-            jsonResponse {
+            success {
                 blockers: blockers 
                 critical: critical 
                 status: status blockers, critical
@@ -35,9 +37,9 @@ fakeData = [
     {x:100, y:0}
 ]
 
-exports.burnUp = (jsonResponse) ->
+exports.burnUp = (error, success) ->
     id = Math.floor Math.random() * 100000
-    jsonResponse {
+    success {
         chartId: 'id' + id,
         totalPoints: 21,
         pointsData: fakeData
