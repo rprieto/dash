@@ -22,6 +22,12 @@ npm install
 npm start
 ```
 
+Or in production:
+```
+npm install
+NODE_ENV=production npm start
+```
+
 Then browse to [localhost:3000](http://localhost:3000)
 
 ## Developing

@@ -1,7 +1,11 @@
+#= require widgets
+
 window.Dash = window.Dash || {}
 window.Dash.Dashboard = ->
     
-    dash = []
+    #
+    # Loading animation
+    #
     
     loadingOpts = {
         lines: 9
@@ -21,6 +25,14 @@ window.Dash.Dashboard = ->
         left: 'auto'
     }
     
+    #
+    # Sonar code coverage
+    #
+    
+    eve.on 'sonar-code-coverage', (evt) ->
+        id = evt.target.find('.chart').attr 'id'
+        createPercentageChart id, evt.data.value
+        
     createPercentageChart = (targetId, percentage) ->
         new pv.Panel()
             .canvas(targetId)
@@ -35,6 +47,14 @@ window.Dash.Dashboard = ->
             .fillStyle(pv.colors('#999', '#181'))
             .root.render()
     
+    #
+    # Jira burn up
+    #
+
+    eve.on 'jira-burn-up', (evt) ->
+        id = evt.target.find('.chart').attr 'id'
+        createAreaChart id, evt.data.pointsData
+                
     createAreaChart = (targetId, data) ->
         w = 410
         h = 90
@@ -56,6 +76,11 @@ window.Dash.Dashboard = ->
             .lineWidth(1)
             .root.render()
 
+
+    #
+    # Render and refresh all widgets
+    #
+
     Widget = ($elem, widget) ->
         refresh = ->
             setTimeout (->
@@ -69,18 +94,23 @@ window.Dash.Dashboard = ->
                     $child = ich[templateName widget] $.extend(widget, data)
                     $child.addClass(className widget)
                     $elem.append $child
-                    if widget.type is 'sonar-code-coverage'
-                        id = $child.find('.chart').attr 'id'
-                        createPercentageChart id, data.value
-                    if widget.type is 'jira-burn-up'
-                        id = $child.find('.chart').attr 'id'
-                        createAreaChart id, data.pointsData
+                    eve widget.type, null, {
+                        target: $child
+                        widget: widget
+                        data: data
+                    }
                 error: ->
                     $elem.empty()
                     $elem.append ich.widget_no_response widget
             }
         refresh()
         setInterval refresh, (60 * 1000)
+
+    #
+    # Dashboard
+    #
+
+    dash = []
     
     getWidgets = (uri) ->
         $.ajax uri, {

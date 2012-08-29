@@ -1,4 +1,4 @@
-exclude = '{$exclude,node_modules}'
+exclude = '{$exclude,node_modules,builtAssets}'
 include = '{$include,.gitignore,.travis.yml}'
 
 softWrap = true  
