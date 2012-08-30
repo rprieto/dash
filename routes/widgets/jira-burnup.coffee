@@ -14,6 +14,8 @@ fakeData = [
     {x:100, y:0}
 ]
 
+exports.view = 'widget_jira_burnup'
+
 exports.data = (error, success) ->
     id = Math.floor Math.random() * 100000
     success {

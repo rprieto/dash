@@ -29,7 +29,7 @@ window.Dash.Dashboard = ->
     # Sonar code coverage
     #
 
-    eve.on 'sonar-code-coverage', (evt) ->
+    eve.on 'sonar_code_coverage', (evt) ->
         id = evt.target.find('.chart').attr 'id'
         createPercentageChart id, evt.data.value
 
@@ -51,7 +51,7 @@ window.Dash.Dashboard = ->
     # Jira burn up
     #
 
-    eve.on 'jira-burn-up', (evt) ->
+    eve.on 'jira_burnup', (evt) ->
         id = evt.target.find('.chart').attr 'id'
         createAreaChart id, evt.data.pointsData
 
@@ -91,10 +91,10 @@ window.Dash.Dashboard = ->
                 dataType: 'json'
                 success: (data) ->
                     $elem.empty()
-                    $child = ich[widget.type] $.extend(widget, data)
-                    $child.addClass(widget.type)
+                    $child = ich[widget.view] $.extend(widget, data)
+                    $child.addClass(widget.view)
                     $elem.append $child
-                    eve widget.type, null, {
+                    eve widget.view, null, {
                         target: $child
                         widget: widget
                         data: data
@@ -123,7 +123,7 @@ window.Dash.Dashboard = ->
         $('.gridster ul').empty()
 
         widgets.forEach (widget) ->
-            if (widget.type) of ich
+            if (widget.view) of ich
                 $elem = ich.griditem widget
                 dash.push Widget($elem, widget)
             else

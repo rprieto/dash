@@ -1,6 +1,7 @@
 [
     {
         "type": "hudson",
+        "view": "hudson_build_status",
         "dataUri": "/widget/hudson/data",
         "size": { "width": 1, "height": 1 },
         "options": {
@@ -12,6 +13,7 @@
     },
     {
         "type": "teamcity",
+        "view": "teamcity_build_status",
         "dataUri": "/widget/teamcity/data",
         "size": { "width": 1, "height": 1 },
         "options": {
@@ -23,6 +25,7 @@
     },
     {
         "type": "ping",
+        "view": "ping",
         "dataUri": "/widget/ping/data",
         "size": { "width": 1, "height": 1 },
         "options": {
@@ -33,6 +36,7 @@
     },
     {
         "type": "countdown",
+        "view": "countdown",
         "dataUri": "/widget/countdown/data",
         "size": { "width": 1, "height": 1 },
         "options": {
@@ -43,6 +47,7 @@
     },
     {
         "type": "jira-burnup",
+        "view": "jira_burnup",
         "dataUri": "/widget/jira-burnup/data",
         "size": { "width": 3, "height": 1 },
         "options": {
@@ -53,6 +58,7 @@
     },
     {
         "type": "sonar",
+        "view": "sonar_code_coverage",
         "dataUri": "/widget/sonar/data",
         "size": { "width": 2, "height": 1 },
         "options": {
@@ -64,6 +70,7 @@
     },
     {
         "type": "jira-issues",
+        "view": "jira_issues",
         "dataUri": "/widget/jira-issues/data",
         "size": { "width": 1, "height": 1 },
         "options": {
@@ -75,6 +82,7 @@
     },
     {
         "type": "twitter",
+        "view": "twitter_hashtag",
         "dataUri": "/widget/twitter/data",
         "size": { "width": 2, "height": 1 },
         "options": {

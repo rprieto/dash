@@ -6,6 +6,8 @@ difference = (date1, date2) ->
 exports.config = () ->
     ['date']
 
+exports.view = 'widget_countdown'
+
 exports.data = (error, success) ->
     targetDate = new Date '07-Sep-2012'
     success {
