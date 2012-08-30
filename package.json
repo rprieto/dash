@@ -1,23 +1,23 @@
 {
-	"name": "dash",
-	"version": "0.0.1",
-	"private": false,
-	"description": "Build monitor / information radiator",
-	"homepage": "",
-	"keywords": ["build", "monitor", "radiator", "dashboard", "hudson", "jenkins", "team city"],
-	"author": "",
+   "name": "dash",
+   "version": "0.0.1",
+   "private": false,
+   "description": "Build monitor / information radiator",
+   "homepage": "",
+   "keywords": ["build", "monitor", "radiator", "dashboard", "hudson", "jenkins", "team city"],
+   "author": "",
     "scripts": {
         "start": "coffee app",
         "test": "mocha"
     },
     "dependencies": {
-		"coffee-script": "1.3.x",
+      "coffee-script": "1.3.x",
         "underscore": "1.3.x",
         "express": "3.0.x",
         "ejs": "0.8.x",
         "less": "1.3.0",
         "connect-assets": "2.3.x",
-		"request": "2.10.x"
+      "request": "2.10.x"
     },
     "devDependencies": {
         "mocha": "1.3.x",
