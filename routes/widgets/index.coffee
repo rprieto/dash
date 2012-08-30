@@ -1,5 +1,4 @@
-
-exports.ping = require('./ping').ping
+exports.ping = require('./ping').render
 exports.countdown = require('./countdown').countdown
 exports.hudson_build_status = require('./hudson').buildStatus
 exports.teamcity_build_status = require('./teamcity').buildStatus
