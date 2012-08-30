@@ -2,11 +2,11 @@
 
 window.Dash = window.Dash || {}
 window.Dash.Dashboard = ->
-    
+
     #
     # Loading animation
     #
-    
+
     loadingOpts = {
         lines: 9
         length: 7
@@ -24,15 +24,15 @@ window.Dash.Dashboard = ->
         top: 'auto'
         left: 'auto'
     }
-    
+
     #
     # Sonar code coverage
     #
-    
+
     eve.on 'sonar-code-coverage', (evt) ->
         id = evt.target.find('.chart').attr 'id'
         createPercentageChart id, evt.data.value
-        
+
     createPercentageChart = (targetId, percentage) ->
         new pv.Panel()
             .canvas(targetId)
@@ -46,7 +46,7 @@ window.Dash.Dashboard = ->
             .height(40)
             .fillStyle(pv.colors('#999', '#181'))
             .root.render()
-    
+
     #
     # Jira burn up
     #
@@ -54,7 +54,7 @@ window.Dash.Dashboard = ->
     eve.on 'jira-burn-up', (evt) ->
         id = evt.target.find('.chart').attr 'id'
         createAreaChart id, evt.data.pointsData
-                
+
     createAreaChart = (targetId, data) ->
         w = 410
         h = 90
@@ -91,8 +91,8 @@ window.Dash.Dashboard = ->
                 dataType: 'json'
                 success: (data) ->
                     $elem.empty()
-                    $child = ich[templateName widget] $.extend(widget, data)
-                    $child.addClass(className widget)
+                    $child = ich[widget.type] $.extend(widget, data)
+                    $child.addClass(widget.type)
                     $elem.append $child
                     eve widget.type, null, {
                         target: $child
@@ -111,7 +111,7 @@ window.Dash.Dashboard = ->
     #
 
     dash = []
-    
+
     getWidgets = (uri) ->
         $.ajax uri, {
             dataType: 'json'
@@ -119,25 +119,18 @@ window.Dash.Dashboard = ->
                 createGrid data
         }
 
-    className = (widget) ->
-        widget.type.replace /\-/g, '_'
-
-    templateName = (widget) ->
-        'widget_' + className widget
-
     createGrid = (widgets) ->
-
         $('.gridster ul').empty()
 
         widgets.forEach (widget) ->
-            if (templateName widget) of ich        
+            if (widget.type) of ich
                 $elem = ich.griditem widget
                 dash.push Widget($elem, widget)
             else
                 $elem = ich.griditem widget
                 $elem.append ich.widget_not_supported widget
             $('.gridster ul').append $elem
-            
+
         $(".gridster ul").gridster {
             widget_margins: [10, 10]
             widget_base_dimensions: [140, 140]

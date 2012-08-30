@@ -1,7 +1,7 @@
 [
     {
-        "type": "hudson-build-status",
-        "dataUri": "/widget/hudson-build-status/data",
+        "type": "hudson",
+        "dataUri": "/widget/hudson/data",
         "size": { "width": 1, "height": 1 },
         "options": {
             "title": "Jenkins POM",
@@ -11,19 +11,8 @@
         "position": { "row": 1, "col": 1 }
     },
     {
-        "type": "hudson-build-status",
-        "dataUri": "/widget/hudson-build-status/data",
-        "size": { "width": 1, "height": 1 },
-        "options": {
-            "title": "Jenkins trunk",
-            "server": "ci.jenkins-ci.org",
-            "project": "jenkins_main_trunk"
-        },
-        "position": { "row": 1, "col": 2 }
-    },
-    {
-        "type": "teamcity-build-status",
-        "dataUri": "/widget/teamcity-build-status/data",
+        "type": "teamcity",
+        "dataUri": "/widget/teamcity/data",
         "size": { "width": 1, "height": 1 },
         "options": {
             "title": "IntelliJ IDEA",
@@ -53,7 +42,7 @@
         "position": { "row": 2, "col": 1 }
     },
     {
-        "type": "jira-burn-up",
+        "type": "jira-burnup",
         "dataUri": "/widget/jira-burnup/data",
         "size": { "width": 3, "height": 1 },
         "options": {
@@ -63,8 +52,8 @@
         "position": { "row": 2, "col": 2 }
     },
     {
-        "type": "sonar-code-coverage",
-        "dataUri": "/widget/sonar-code-coverage/data",
+        "type": "sonar",
+        "dataUri": "/widget/sonar/data",
         "size": { "width": 2, "height": 1 },
         "options": {
             "title": "Spring integration",
@@ -85,8 +74,8 @@
         "position": { "row": 2, "col": 4 }
     },
     {
-        "type": "twitter-hashtag",
-        "dataUri": "/widget/twitter-hashtag/data",
+        "type": "twitter",
+        "dataUri": "/widget/twitter/data",
         "size": { "width": 2, "height": 1 },
         "options": {
             "hashtag": "build"

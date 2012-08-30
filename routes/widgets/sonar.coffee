@@ -1,6 +1,6 @@
 request = require 'request'
 
-exports.sonarCodeCoverage = (error, success) ->
+exports.data = (error, success) ->
     uri = 'https://sonar.springsource.org/api/resources?resource=org.springframework.integration:spring-integration&metrics=coverage'
     request.get {url: uri, json: true}, (error, response, data) ->
         value = Math.floor data[0].msr[0].val
