@@ -32,11 +32,8 @@ app.configure 'production', ->
     app.use express.errorHandler()
 
 app.get '/', home.dashboard
-app.get '/test', home.test
-app.get '/widgets/user', widgets.user
-app.get '/widgets/test', widgets.test
+app.get '/widgets', widgets.get
 app.get '/widget/:type/data', data.get
-app.get '/widget/:type/test', data.test
 
 http.createServer(app).listen app.get('port'), () ->
     console.log 'Express server listening on port ' + app.get('port')

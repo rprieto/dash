@@ -1,5 +1,13 @@
 request = require 'request'
-widgets = require './widgets/index'
+fs = require 'fs'
+
+widgets = {}
+
+files = fs.readdirSync('routes/widgets')
+for file in files
+    widget = require "./widgets/#{file}"
+    widgetName = file.replace /\.coffee$/, ''
+    widgets[widgetName] = widget
 
 error = (res) ->
     (err) ->
@@ -19,9 +27,8 @@ notSupported = (res) ->
     res.end()
 
 exports.test = (req, res) ->
-    widgetName = req.params.type.replace /\-/g, '_'
     if widgetName of widgets
-        widgets[widgetName] error(res), success(res)
+        widgets[req.params.type].data error(res), success(res)
     else
         notSupported(res)
 
