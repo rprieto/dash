@@ -10,16 +10,16 @@
     </head>
 
     <body>
-        
+
         <a href="/edit">
             <div class="folded-corner"></div>
         </a>
-        
+
         <div class="gridster">
             <ul id="dashboard">
             </ul>
         </div>
-        
+
         <script type="text/javascript" src="/javascripts/jquery-1.8.0.min.js"></script>
         <script type="text/javascript" src="/javascripts/jquery.gridster.min.js"></script>
         <script type="text/javascript" src="/javascripts/ICanHaz.min.js"></script>
@@ -27,24 +27,31 @@
         <script type="text/javascript" src="/javascripts/jquery.spin.js"></script>
         <script type="text/javascript" src="/javascripts/protovis.min.js"></script>
         <script type="text/javascript" src="/javascripts/eve-0.3.5.js"></script>
-        
+
         <%- js('dashboard') %>
-        
+
         <script>
-                
             $(document).ready(function() {
                 var dashboard = Dash.Dashboard()
                 dashboard.getWidgets('<%= uri %>');
             });
-
         </script>
-        
+
+        <script id="ping" type="text/html">
+            <div class="widget" data-sizey="{{size.height}}">
+                <div class="content">
+                    <div class="title">{{value}}</div>
+                    <div class="icon-{{icon}}"></div>
+                </div>
+            </div>
+        </script>
+
         <script id="griditem" type="text/html">
                 <li class="widget" data-row="{{position.row}}" data-col="{{position.col}}" data-sizex="{{size.width}}" data-sizey="{{size.height}}">
                 </li>
             </ul>
         </script>
-        
+
         <script id="widget_not_supported" type="text/html">
             <div class="widget unsupported" data-sizey="{{size.height}}">
                 <span class="type">{{type}}</span>
@@ -58,16 +65,6 @@
                 <div class="content">No response</div>
             </div>
         </script>
-        
-        <script id="widget_ping" type="text/html">
-            <div class="widget status-{{status}}" data-sizey="{{size.height}}">
-                <span class="type">Ping</span>
-                <div class="content">
-                    <div class="title">{{options.title}}</div>
-                    <div class="icon-{{icon}}"></div>
-                </div>
-            </div>
-        </script>
 
         <script id="widget_countdown" type="text/html">
             <div class="widget" data-sizey="{{size.height}}">
@@ -79,7 +76,7 @@
                 </div>
             </div>
         </script>
-        
+
         <script id="widget_hudson_build_status" type="text/html">
             <div class="widget status-{{status}}" data-sizey="{{size.height}}">
                 <span class="type">Hudson</span>
@@ -140,7 +137,7 @@
                 </div>
             </div>
         </script>
-        
+
         <script id="widget_twitter_hashtag" type="text/html">
             <div class="widget" data-sizey="{{size.height}}">
                 <span class="type">Twitter</span>
@@ -150,7 +147,7 @@
                 </div>
             </div>
         </script>
-        
+
     </body>
 
 </html>
