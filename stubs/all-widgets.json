@@ -1,5 +1,48 @@
 [
     {
+        "type": "hudson-build-status",
+        "dataUri": "/widget/hudson-build-status/data",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "Jenkins POM",
+            "server": "ci.jenkins-ci.org",
+            "project": "jenkins_pom"
+        },
+        "position": { "row": 1, "col": 1 }
+    },
+    {
+        "type": "hudson-build-status",
+        "dataUri": "/widget/hudson-build-status/data",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "Jenkins trunk",
+            "server": "ci.jenkins-ci.org",
+            "project": "jenkins_main_trunk"
+        },
+        "position": { "row": 1, "col": 2 }
+    },
+    {
+        "type": "teamcity-build-status",
+        "dataUri": "/widget/teamcity-build-status/data",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "IntelliJ IDEA",
+            "server": "teamcity.jetbrains.com",
+            "buildType": "bt343"
+        },
+        "position": { "row": 1, "col": 3 }
+    },
+    {
+        "type": "ping",
+        "dataUri": "/widget/ping/data",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "Google",
+            "server": "google.com"
+        },
+        "position": { "row": 1, "col": 4 }
+    },
+    {
         "type": "countdown",
         "dataUri": "/widget/countdown/data",
         "size": { "width": 1, "height": 1 },
@@ -8,5 +51,46 @@
             "date": "12-Sep-2012"
         },
         "position": { "row": 2, "col": 1 }
+    },
+    {
+        "type": "jira-burn-up",
+        "dataUri": "/widget/jira-burnup/data",
+        "size": { "width": 3, "height": 1 },
+        "options": {
+            "title": "My project",
+            "project": "NameInJira"
+        },
+        "position": { "row": 2, "col": 2 }
+    },
+    {
+        "type": "sonar-code-coverage",
+        "dataUri": "/widget/sonar-code-coverage/data",
+        "size": { "width": 2, "height": 1 },
+        "options": {
+            "title": "Spring integration",
+            "server": "sonar.springsource.org",
+            "project": "org.springframework.integration:spring-integration"
+        },
+        "position": { "row": 3, "col": 1 }
+    },
+    {
+        "type": "jira-issues",
+        "dataUri": "/widget/jira-issues/data",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "GHS",
+            "server": "jira.atlassian.com",
+            "project": "GHS"
+        },
+        "position": { "row": 2, "col": 4 }
+    },
+    {
+        "type": "twitter-hashtag",
+        "dataUri": "/widget/twitter-hashtag/data",
+        "size": { "width": 2, "height": 1 },
+        "options": {
+            "hashtag": "build"
+        },
+        "position": { "row": 3, "col": 3 }
     }
 ]
