@@ -1,4 +1,20 @@
-# Tasks
+# TODO soon
+## Just write your name in front of a task if you're working on it
+
+
+- move "size" out of static JSON into client-side template
+- move "view" out of static JSON into server widget code
+- what is "all_widgets"?
+    * dynamic list of all possible widgets (ie DB)
+- dashboard.json: which widgets we want, and their options
+- persistance of positions/config...
+    client side or server side?
+    what about multiple dashboards on the same server?
+- when asking for widget data
+    need to give configation, instead of using hardcoded URIs
+
+
+# High level tasks
 
 
 ## Client-side refactor
