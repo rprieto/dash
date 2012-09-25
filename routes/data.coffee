@@ -5,9 +5,10 @@ widgets = {}
 
 files = fs.readdirSync('routes/widgets')
 for file in files
-    widget = require "./widgets/#{file}"
-    widgetName = file.replace /\.coffee$/, ''
-    widgets[widgetName] = widget
+    if file.match(/\.coffee$/) != null
+        widget = require "./widgets/#{file}"
+        widgetName = file.replace /\.coffee$/, ''
+        widgets[widgetName] = widget
 
 error = (res) ->
     (err) ->
