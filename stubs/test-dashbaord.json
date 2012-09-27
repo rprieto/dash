@@ -9,6 +9,18 @@
         }
     },
     {
+        "type": "travis",
+        "view": "travis_build_status",
+        "dataUri": "/widget/travis/data",
+        "size": { "width": 1, "height": 1 },
+        "options": {
+            "title": "Travis CI",
+            "server": "travis-ci.org",
+            "project": "rprieto/dash"
+        },
+        "position": { "row": 4, "col": 1 }
+    },
+    {
         "type": "hudson-build-status",
         "position": { "row": 1, "col": 2 },
         "options": {

@@ -21,10 +21,6 @@
 
 - Concept of widget
 
-- Even routing
-    - publish event when widget data arrives
-    - no need for "if type is jira"
-
 - Concat all scripts (requirejs?)
 
 ## New widgets

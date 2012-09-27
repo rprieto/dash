@@ -86,6 +86,16 @@
             </div>
         </script>
 
+        <script id="travis_build_status" type="text/html">
+            <div class="widget status-{{status}}" data-sizey="{{size.height}}">
+                <span class="type">Travis</span>
+                <div class="content">
+                    <div class="title">{{options.title}}</div>
+                    <div class="build">#{{build}}</div>
+                </div>
+            </div>
+        </script>
+
         <script id="teamcity_build_status" type="text/html">
             <div class="widget status-{{status}}" data-sizey="{{size.height}}">
                 <span class="type">Team city</span>
