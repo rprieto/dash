@@ -8,6 +8,7 @@ path = require 'path'
 home = require './routes/home'
 widgets = require './routes/widgets'
 data = require './routes/data'
+edit = require './routes/edit'
 
 app = express()
 
@@ -34,6 +35,8 @@ app.configure 'production', ->
 app.get '/', home.dashboard
 app.get '/widgets', widgets.get
 app.get '/widget/:type/data', data.get
+app.get '/edit', edit.page
+app.post '/uploadConfig', edit.upload_file
 
 http.createServer(app).listen app.get('port'), () ->
     console.log 'Express server listening on port ' + app.get('port')

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Dash</title>
+        <link rel="icon" type="image/icon" href="/favicon.ico" />
+        <%- css('style') %>
+        <%- css('font-awesome') %>
+        <style>
+        body {
+            padding: 2em;
+        }
+        </style>
+    </head>
+
+    <body>
+        
+        <form method="post" action="/uploadConfig" enctype="multipart/form-data">
+            <input name="config" type="file" />
+            <input type="submit" value="Upload" />
+        </form>
+
+    </body>
+
+</html>
