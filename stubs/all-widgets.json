@@ -1,105 +1,29 @@
 [
     {
-        "type": "hudson",
-        "view": "hudson_build_status",
+        "view": "build_status",
         "dataUri": "/widget/hudson/data",
-        "size": { "width": 1, "height": 1 },
         "options": {
             "title": "Jenkins POM",
-            "server": "ci.jenkins-ci.org",
-            "project": "jenkins_pom"
-        },
-        "position": { "row": 1, "col": 1 }
+            "subtitle": "Hudson",
+            "position": { "row": 1, "col": 1 }
+        }
     },
     {
-        "type": "travis",
-        "view": "travis_build_status",
+        "view": "build_status",
+        "dataUri": "/widget/hudson/data",
+        "options": {
+            "title": "Spring MVC",
+            "subtitle": "Hudson",
+            "position": { "row": 1, "col": 2 }
+        }
+    },
+    {
+        "view": "build_status",
         "dataUri": "/widget/travis/data",
-        "size": { "width": 1, "height": 1 },
         "options": {
-            "title": "Travis CI",
-            "server": "travis-ci.org",
-            "project": "rprieto/dash"
-        },
-        "position": { "row": 4, "col": 1 }
-    },
-    {
-        "type": "teamcity",
-        "view": "teamcity_build_status",
-        "dataUri": "/widget/teamcity/data",
-        "size": { "width": 1, "height": 1 },
-        "options": {
-            "title": "IntelliJ IDEA",
-            "server": "teamcity.jetbrains.com",
-            "buildType": "bt343"
-        },
-        "position": { "row": 1, "col": 3 }
-    },
-    {
-        "type": "ping",
-        "view": "ping",
-        "dataUri": "/widget/ping/data",
-        "size": { "width": 1, "height": 1 },
-        "options": {
-            "title": "Google",
-            "server": "google.com"
-        },
-        "position": { "row": 1, "col": 4 }
-    },
-    {
-        "type": "countdown",
-        "view": "countdown",
-        "dataUri": "/widget/countdown/data",
-        "size": { "width": 1, "height": 1 },
-        "options": {
-            "title": "in iteration",
-            "date": "12-Sep-2012"
-        },
-        "position": { "row": 2, "col": 1 }
-    },
-    {
-        "type": "jira-burnup",
-        "view": "jira_burnup",
-        "dataUri": "/widget/jira-burnup/data",
-        "size": { "width": 3, "height": 1 },
-        "options": {
-            "title": "My project",
-            "project": "NameInJira"
-        },
-        "position": { "row": 2, "col": 2 }
-    },
-    {
-        "type": "sonar",
-        "view": "sonar_code_coverage",
-        "dataUri": "/widget/sonar/data",
-        "size": { "width": 2, "height": 1 },
-        "options": {
-            "title": "Spring integration",
-            "server": "sonar.springsource.org",
-            "project": "org.springframework.integration:spring-integration"
-        },
-        "position": { "row": 3, "col": 1 }
-    },
-    {
-        "type": "jira-issues",
-        "view": "jira_issues",
-        "dataUri": "/widget/jira-issues/data",
-        "size": { "width": 1, "height": 1 },
-        "options": {
-            "title": "GHS",
-            "server": "jira.atlassian.com",
-            "project": "GHS"
-        },
-        "position": { "row": 2, "col": 4 }
-    },
-    {
-        "type": "twitter",
-        "view": "twitter_hashtag",
-        "dataUri": "/widget/twitter/data",
-        "size": { "width": 2, "height": 1 },
-        "options": {
-            "hashtag": "build"
-        },
-        "position": { "row": 3, "col": 3 }
-    }
+            "title": "Dash",
+            "subtitle": "Travis",
+            "position": { "row": 1, "col": 3 }
+        }
+    }    
 ]

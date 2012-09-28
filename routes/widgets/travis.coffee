@@ -1,6 +1,6 @@
 request = require 'request'
 
-exports.view = 'widget_travis_build_status'
+exports.view = 'build_status'
 
 exports.data = (error, success) ->
     projectUri = 'http://travis-ci.org/repositories.json?search=rprieto/dash'

@@ -37,7 +37,7 @@
         </script>
 
         <script id="griditem" type="text/html">
-                <li class="widget" data-row="{{position.row}}" data-col="{{position.col}}" data-sizex="{{size.width}}" data-sizey="{{size.height}}">
+                <li class="widget" data-sizex="{{size.width}}" data-sizey="{{size.height}}">
                 </li>
             </ul>
         </script>
@@ -155,6 +155,27 @@
                     <span class="icon-twitter"></span>
                 </div>
             </div>
+        </script>
+
+
+
+
+
+        <script id="build_status" type="text/html">
+            <li class="widget" data-row="{{options.position.row}}" data-col="{{options.position.col}}" data-sizex="1" data-sizey="1">
+                <span class="type">{{options.subtitle}}</span>
+                {{^data}}
+                    <div class="widget">Spinner</div>
+                {{/data}}
+                {{#data}}
+                    <div class="widget status-{{status}}" data-sizey="1">
+                        <div class="content">
+                            <div class="title">{{options.title}}</div>
+                            <div class="build">#{{build}}</div>
+                        </div>
+                    </div>
+                {{/data}}
+            </li>
         </script>
 
     </body>
