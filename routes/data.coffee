@@ -22,7 +22,7 @@ success = (res) ->
         res.write JSON.stringify json
         res.end()
 
-notSupported = (res) ->    
+notSupported = (res) ->
     res.writeHead 404, {'Content-Type', 'text/html'}
     res.write 'Not supported'
     res.end()

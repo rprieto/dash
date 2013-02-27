@@ -3,10 +3,7 @@
 window.Dash = window.Dash || {}
 window.Dash.Dashboard = ->
 
-    #
     # Render and refresh all widgets
-    #
-
     Widget = ($elem, widget) ->
         refresh = ->
             $.ajax widget.dataUri, {
@@ -26,10 +23,7 @@ window.Dash.Dashboard = ->
         refresh()
         setInterval refresh, (60 * 1000)
 
-    #
     # Dashboard
-    #
-
     dash = []
 
     getWidgets = (uri) ->

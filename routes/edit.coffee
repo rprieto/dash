@@ -1,7 +1,5 @@
-
 exports.page = (req, res) ->
     res.render 'edit'
-
 
 parse_multipart = (req) ->
     parser = multipart.parser()
@@ -14,7 +12,7 @@ parse_multipart = (req) ->
 
 
 exports.upload_file = (req, res) ->
-    
+
     req.setBodyEncoding "binary"
     stream = parse_multipart req
     fileName = null
