@@ -25,5 +25,14 @@
             "subtitle": "Travis",
             "position": { "row": 1, "col": 3 }
         }
-    }    
+    },
+    {
+        "view": "ping",
+        "dataUri": "/widget/ping/data",
+        "options": {
+            "title": "Ping",
+            "subtitle": "Google",
+            "position": { "row": 1, "col": 3 }
+        }
+    }
 ]

@@ -56,15 +56,6 @@
             </div>
         </script>
 
-        <script id="ping" type="text/html">
-            <div class="widget" data-sizey="{{size.height}}">
-                <div class="content">
-                    <div class="title">{{value}}</div>
-                    <div class="icon-{{icon}}"></div>
-                </div>
-            </div>
-        </script>
-
         <script id="countdown" type="text/html">
             <div class="widget" data-sizey="{{size.height}}">
                 <span class="type">Countdown</span>
@@ -172,6 +163,23 @@
                         <div class="content">
                             <div class="title">{{options.title}}</div>
                             <div class="build">#{{build}}</div>
+                        </div>
+                    </div>
+                {{/data}}
+            </li>
+        </script>
+
+        <script id="ping" type="text/html">
+            <li class="widget" data-row="{{options.position.row}}" data-col="{{options.position.col}}" data-sizex="1" data-sizey="1">
+                <span class="type">{{options.subtitle}}</span>
+                {{^data}}
+                    <div class="widget">Spinner</div>
+                {{/data}}
+                {{#data}}
+                    <div class="widget status-{{status}}" data-sizey="1">
+                        <div class="content">
+                            <div class="title">{{options.title}}</div>
+                            <div class="icon-{{icon}}"></div>
                         </div>
                     </div>
                 {{/data}}
